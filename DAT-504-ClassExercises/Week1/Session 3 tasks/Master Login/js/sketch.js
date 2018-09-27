@@ -14,10 +14,12 @@ if (login == 'admin'){
     if(adminPass == '123'){
       document.getElementById('welcome').innerHTML = 'Hello, Master ' + login;
     }
-    else if (adminPass == null) {
-      document.getElementById('welcome').innerHTML = 'Why did you cancel?';
-    }
+
     while(adminPass != '123'){
+      if (adminPass == null){
+        document.getElementById('welcome').innerHTML = 'Why did you cancel?';
+        break;
+      }
       var adminPass = prompt('Wrong password, try again.');
       document.getElementById('welcome').innerHTML = 'Hello, Master ' + login;
     }
